@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Marinero</string>
+
+    <string name="intro_sign_eror">Došlo je do problema, pokušajte kasnije</string>
+
+    <string name="menu_home">Početna</string>
+    <string name="menu_gallery">Galerija</string>
+    <string name="menu_towns">Gradovi</string>
+    <string name="menu_beaches">Plaže</string>
+    <string name="menu_harts">Tvoja srca</string>
+    <string name="menu_share">Dijeli</string>
+    <string name="menu_settings">Postavke</string>
+    <string name="menu_about">O aplikaciji</string>
+    <string name="menu_personal">Osobno</string>
+    <string name="menu_change_account">Promjeni profil</string>
+    <string name="menu_logout">Odjavi se</string>
+
+    <string name="like_town">Ovaj grad je dodan u tvoje favorite!</string>
+
+    <string name="title_activity_city_detail">O gradu</string>
+    <string name="city_tab_text_1">Opis</string>
+    <string name="city_tab_text_2">Osvrti</string>
+    <string name="city_tab_text_3">Sunce</string>
+
+    <string name="review_list_error">Nema komentara za ovo mjesto.</string>
+    <string name="review_add">Dodaj komentar</string>
+
+    <string name="error">Nešto je pošlo po krivom :(</string>
+
+    <string name="lorem">Sed ut perspiciatis unde omnis iste natus error sitvoluptatem accusantium doloremque laudantium, totam rem aperiam,
+        eaque ipsa quae ab illo inventore veritatiset quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas
+        sit aspernatur aut odit aut fugit, sedquia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est,
+        qui dolorem ipsum quia dolor sit amet,consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam
+        aliquam quaerat voluptatem. Ut enim adminima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi
+        consequatur? Quis autem vel eumiure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?</string>
+
+</resources>
