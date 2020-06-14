@@ -23,11 +23,13 @@ import com.google.firebase.auth.FirebaseUser;
 
 public class Main extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener{
 
+    private String username="unknown";
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.drawer_layout);
-        //checkIfSignedIn();
+        checkIfSignedIn();
 
         Toolbar toolbar= findViewById(R.id.toolbar); //setup the toolbar
         setSupportActionBar(toolbar);
@@ -49,7 +51,7 @@ public class Main extends AppCompatActivity implements NavigationView.OnNavigati
         //initializing the fragment object which is selected
         switch (itemId) {
             case R.id.nav_home:
-                fragment = new SightListFragment();
+                fragment = SightListFragment.newInstance(username);
                 break;
             case R.id.nav_logout:
                 signOut(); //starts intent for sign out
@@ -81,8 +83,10 @@ public class Main extends AppCompatActivity implements NavigationView.OnNavigati
 //------> Authentication
     private void checkIfSignedIn() {
         FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
-        if (user != null) //makni ovo kad rješiš login
+        if (user != null){ //makni ovo kad rješiš login
+            username=user.getDisplayName();
             Toast.makeText(this, "Welcome " + user.getDisplayName(), Toast.LENGTH_SHORT).show();
+        }
         else
             startIntro();
     }

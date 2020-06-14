@@ -13,17 +13,15 @@
         android:largeHeap="true"
         android:theme="@style/AppIntro">
         <activity android:name=".CityDetail" android:screenOrientation="portrait"/>
-        <activity android:name=".Main" android:screenOrientation="portrait">
-        <intent-filter>
-            <action android:name="android.intent.action.MAIN" />
-
-            <category android:name="android.intent.category.LAUNCHER" />
-        </intent-filter>
-        </activity>
+        <activity android:name=".Main" android:screenOrientation="portrait"/>
         <activity android:name=".SightListView" android:screenOrientation="portrait" />
         <activity android:name=".CityDetails" android:screenOrientation="portrait" />
         <activity android:name=".Intro" android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
 
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
         </activity>
     </application>
 

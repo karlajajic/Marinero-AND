@@ -21,6 +21,7 @@ import android.widget.EditText;
 import com.example.marinero_kj.adapter.ReviewAdapter;
 import com.example.marinero_kj.pojo.Review;
 import com.example.marinero_kj.viewModel.ReviewViewModel;
+import com.google.android.material.snackbar.Snackbar;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -33,14 +34,17 @@ public class ReviewFragment extends Fragment {
 
     private String sightName;
     private static final String SIGHT_NAME="name";
+    private String username;
+    private static final String USERNAME="user";
 
     private ReviewViewModel viewModel;
     private ReviewAdapter adapter;
 
-    public static ReviewFragment newInstance(String name) {
+    public static ReviewFragment newInstance(String name, String username) {
         ReviewFragment fragment = new ReviewFragment();
         Bundle bundle = new Bundle();
         bundle.putString(SIGHT_NAME, name);
+        bundle.putString(USERNAME, username);
         fragment.setArguments(bundle);
         return fragment;
     }
@@ -50,16 +54,20 @@ public class ReviewFragment extends Fragment {
         super.onCreate(savedInstanceState);
         viewModel = ViewModelProviders.of(this).get(ReviewViewModel.class);
         String name="error";
+        String user="unknown";
 
-        if(getArguments()!=null)
-            name= getArguments().getString(SIGHT_NAME);
+        if(getArguments()!=null) {
+            name = getArguments().getString(SIGHT_NAME);
+            user=getArguments().getString(USERNAME);
+        }
         sightName=name;
+        username=user;
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        View view= inflater.inflate(R.layout.fragment_review, container, false);
+        final View view= inflater.inflate(R.layout.fragment_review, container, false);
 
         recyclerView= view.findViewById(R.id.review_recycler_view);
         recyclerView.hasFixedSize();
@@ -91,7 +99,9 @@ public class ReviewFragment extends Fragment {
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                viewModel.addReview(sightName, new Review("us0", userInput.getText().toString()));
+                viewModel.addReview(sightName, new Review(username, userInput.getText().toString()));
+                Snackbar.make(view, R.string.review_add, Snackbar.LENGTH_LONG).show();
+                userInput.setText("");
             }
         });
 

@@ -1,10 +1,19 @@
 package com.example.marinero_kj.pojo;
 
+import androidx.annotation.NonNull;
+import androidx.room.Entity;
+import androidx.room.Ignore;
+import androidx.room.PrimaryKey;
+
 import java.io.Serializable;
 
+@Entity(tableName="sight_table")
 public class Sight implements Serializable {
 
-    private String name, description;
+    @PrimaryKey
+    @NonNull
+    private String name;
+    private String description;
     private double latitude, longitude;
     private int image;
     private boolean isTown, isHearted;
@@ -19,6 +28,7 @@ public class Sight implements Serializable {
         longitude=-1;
     }
 
+    @Ignore
     public Sight(String name, String description, int image, boolean isTown, boolean isHearted){
         this.name=name;
         this.description=description;
